@@ -35,9 +35,9 @@
             </h2>
             <!-- altrimenti  -->
             <ul v-else>
-                <li v-for = "(list, i) in arrList" class="list">
+                <!-- creazione di una classe dinamica per il quale sbara chi è stato completato -->
+                <li v-for = "(list, i) in arrList" class="list" :class="{ barratesto: list.bool === true }">
                     {{ list.testo }}
-                    <!-- <span :style="list.bool === true ? {textDecoration: 'line-through'}: '' "> {{list.arrList}}</span> -->
                     <i class="fa-solid fa-xmark" @click = "eliminaTask(i)"></i>
                 </li>
             </ul>

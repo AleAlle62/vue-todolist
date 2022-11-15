@@ -21,19 +21,19 @@ new Vue ({
         arrList: [
         {
             testo: 'fare la spesa',
-            bool : 'true',
+            bool : true,
         },
         {
             testo: 'allenamento',
-            bool : 'false',
+            bool : false,
         },
         {
             testo: 'esercizi per casa',
-            bool : 'false',
+            bool : true,
         },
         {
             testo: 'prendere acqua',
-            bool : 'false',
+            bool : false,
         },
     ], // elelmenti che ci sono gia nella lista
     
@@ -45,7 +45,10 @@ new Vue ({
         //funzione per aggiungere la task
         aggiungiTask(){
             if (this.newTask){
-                this.arrList.push(this.newTask)
+                this.arrList.push({
+                    testo: this.newTask, //accesso dentro l'array
+                    bool : this.newTask,
+                })
                 this.newTask = ''
             } 
         },

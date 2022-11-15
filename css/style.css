@@ -42,3 +42,7 @@ img {
 li {
     margin-top: 20px;
 }
+
+.barratesto {
+    text-decoration: line-through;
+}
