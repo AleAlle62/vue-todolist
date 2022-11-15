@@ -18,9 +18,27 @@ new Vue ({
     el : '#app',
     // dati
     data : {
-        arrList: ['andare all allenamento', 'fare la spesa', 'finire i compiti', 'compare acqua', 'rivedere lezione'], //array degli elelmenti che ci sono gia nella lista
-        // variabile che si puo mettere aggiungendola
-        newTask: '',
+        arrList: [
+        {
+            testo: 'fare la spesa',
+            bool : 'true',
+        },
+        {
+            testo: 'allenamento',
+            bool : 'false',
+        },
+        {
+            testo: 'esercizi per casa',
+            bool : 'false',
+        },
+        {
+            testo: 'prendere acqua',
+            bool : 'false',
+        },
+    ], // elelmenti che ci sono gia nella lista
+    
+    newTask: '', // variabile che si puo mettere aggiungendola
+        
     },
 
     methods : {
@@ -33,7 +51,7 @@ new Vue ({
         },
         //per eliminare
         eliminaTask(index){
-            this.arrList.splice(index, 1)
+            this.arrList.splice(index , 1)
         }
     }
 

@@ -35,9 +35,10 @@
             </h2>
             <!-- altrimenti  -->
             <ul v-else>
-                <li v-for = "(list, i) in arrList" :key = "list" class="list">
-                    {{ list }}
-                    <i class="fa-solid fa-xmark" @click = "eliminaTask()"></i>
+                <li v-for = "(list, i) in arrList" class="list">
+                    {{ list.testo }}
+                    <!-- <span :style="list.bool === true ? {textDecoration: 'line-through'}: '' "> {{list.arrList}}</span> -->
+                    <i class="fa-solid fa-xmark" @click = "eliminaTask(i)"></i>
                 </li>
             </ul>
         </div>
