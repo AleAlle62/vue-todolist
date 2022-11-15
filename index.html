@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- stile  -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- fontawseome  -->
+    <script src="https://kit.fontawesome.com/c88a405b1b.js" crossorigin="anonymous"></script>
+    <!-- vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- js -->
+    <script src="js/script.js" defer></script>
+    <!-- titolo -->
+    <title>to do list </title>
+</head>
+<body>
+    <!-- dichiarazione di vue  -->
+    <div id="app">
+        <!-- se si vuole inserire logo  -->
+        <h1>To Do List</h1>
+        <!-- nuova task  -->
+        <div class="new-task">
+            <!-- input di tipo testo collegato alla variabile vue newTask  -->
+            <input @keyup.enter="aggiungiTask" type="text" placeholder="aggiungi nuova task..." v-model="newTask">
+            <!-- bottone che cliccando fa la funzione di aggiungere  -->
+            <button @click="aggiungiTask">aggiungi alla lista</button>
+        </div>
+        <!-- container per la lista  -->
+        <div class="container-lista">
+            <!-- se non c'è nulla nella lista compare questo  -->
+            <h2 v-if = "arrList.length === 0">complimenti, hai completato tutte le task
+                <img src="https://wonder-day.com/wp-content/uploads/2022/03/wonder-day-avatar-memes-cats-40.jpg">
+            </h2>
+            <!-- altrimenti  -->
+            <ul v-else>
+                <li v-for = "(list, i) in arrList" :key = "list" class="list">
+                    {{ list }}
+                    <i class="fa-solid fa-xmark" @click = "eliminaTask()"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
