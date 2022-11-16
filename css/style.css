@@ -25,6 +25,8 @@ h1 {
     display: flex;
     gap: 5px;
     font-size: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
 i {
@@ -36,7 +38,7 @@ i {
 }
 
 img {
-    height: 500px;
+    height: 400px;
 }
 
 li {
